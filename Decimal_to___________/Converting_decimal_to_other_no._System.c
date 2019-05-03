@@ -80,7 +80,31 @@ int dec_Oct(int decimal)
 }
 int dec_Hex(int decimal)
 {
+				
+	int rem,i,temp;
+	char arr2[100];
 	
+	temp=decimal;	
+	for(i=0;decimal>0;i++)
+	{
+		rem=decimal%16;
+		if(rem<10)
+		{
+			rem=rem+48;
+		}
+		else
+		{
+			rem=rem+55;
+		}
+		arr2[i]=rem;
+		decimal=decimal/16;
+	}
+	printf("%d in Hexadecimal = ",temp);
+	for(i=i-1;i>=0;i--)
+	{
+		printf("%c",arr2[i]);
+	}
+	drawline();
 }
 int dec_Base4(decimal)
 {
